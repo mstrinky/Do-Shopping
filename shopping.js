@@ -3,6 +3,8 @@ const cardArray = [];
 function display(cardProduct){
     // console.log(cardProduct);
     const tableBody = document.getElementById("card-products");
+    tableBody.innerHTML = "";
+
     for(let i = 0; i < cardProduct.length; i++){
         // console.log(cardArray[i].productName,cardArray[i].productPrice);
         const name = cardArray[i].productName;
@@ -10,12 +12,15 @@ function display(cardProduct){
 
         const tr = document.createElement("tr");
         tr.innerHTML = `
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>0</td>
+        <th> ${i + 1} </th>
+        <td> ${name} </td>
+        <td> ${price} </td>
         `;
-
-        tableBody.appendChild(tr);
+        if(tableBody){
+            tableBody.appendChild(tr);
+           
+        }
+        // console.log(tr);
     }
 }
 
