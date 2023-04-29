@@ -26,7 +26,7 @@ function display(cardProduct){
 
     const tr = document.createElement("tr");
     tr.innerHTML = `
-    <th> </th>
+   <th> </th>
     <td> Total Price </td>
     <td> ${totalPrice}</td>
     `;
