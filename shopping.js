@@ -1,15 +1,21 @@
 const cardArray = [];
 
-function dislay (cardProduct){
+function display(cardProduct){
     // console.log(cardProduct);
-    const tableBody = document.getElementById('card-products');
-    for(let i=0; i<cardProduct.length; i++){
-        // console.log(cardArray[i]);
+    const tableBody = document.getElementById("card-products");
+    for(let i = 0; i < cardProduct.length; i++){
+        // console.log(cardArray[i].productName,cardArray[i].productPrice);
         const name = cardArray[i].productName;
         const price = cardArray[i].productPrice;
 
-        const tr = document.createElement('tr');
-        
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+        <th>1</th>
+        <td>Cy Ganderton</td>
+        <td>0</td>
+        `;
+
+        tableBody.appendChild(tr);
     }
 }
 
@@ -30,7 +36,6 @@ function addToCard (element){
     cardArray.push(productObj);
     // console.log(cardArray);
     // console.log(cardArray,length);
-
-    document.getElementById('total-added-product').innerText = cardArray.length;
-    dislay(cardArray);
+   document.getElementById("total-added-product").innerText = cardArray.length;
+   display(cardArray);
 }
